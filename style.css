@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  /* #### Primary Text */
+  --Very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --Soft-red: hsl(14, 88%, 65%);
+
+  /* Background gradient: */
+  --Soft-violet: hsl(273, 75%, 66%);
+  --Soft-blue: hsl(240, 73%, 65%);
+
+  /* #### Neutral Text */
+  --Very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --Dark-grayish-blue: hsl(240, 6%, 50%);
+
+  /* #### Neutral Dividers */
+  --Light-grayish-blue: hsl(240, 5%, 91%);
+  --white: hsl(0, 0%, 100%);;
+
+}
+html {
+  font-size: 10px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 1em;
+  background: linear-gradient(to bottom, var(--Soft-violet), var(--Soft-blue));
+  color: var(--Dark-grayish-blue);
+}
+/* body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url(./design/desktop-design.jpg);
+  background-size: contain;
+  z-index: 1;
+  opacity: 0;
+} */
+h1 {
+  color: var(--Very-dark-desaturated-blue);
+  font-size: 3.3em;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: -2rem 0 2rem 0 ;
+}
+h2 {
+  color: var(--Very-dark-grayish-blue);
+  font-size: 1.48em;
+  font-weight: 400;
+}
+.center {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+.container  {
+  background-color: var(--white);
+  width: 96rem;
+  height: 53.2rem;
+  border-radius: 2.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 00px 35px 60px 0 rgba(0, 0, 0, 0.35) ;
+}
+.container > .container-img, .container > .container-faqs{
+  width: 50%; 
+  position: relative;  
+}
+.container-img{
+  height: 100%; 
+}
+.container-img .group-hidden{
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.container-img .img-hidden{
+  height: 100%;
+  width: 100%;
+}
+.img-woman {
+  width: 49.5rem;
+  position: absolute;
+  top: 13.5%;
+  left: -19%;
+ 
+}
+.img-box {
+  width: 20rem;
+  position: absolute;
+  top: 40%;
+  left: -21%;  
+  animation: boxMove 2s ease-in-out infinite;
+}
+.img-pattern {
+  width: 100rem;
+  position: absolute;
+  top: -57%;
+  left: -124.2%; 
+}
+
+@keyframes boxMove {
+  0% {
+    top: 40%;
+  }
+  50% {
+    top: 41%;
+  }
+  100% {
+    top: 40%;
+  }
+}
+
+.container-faqs {
+  padding: 1.5rem; 
+}
+.group-faqs {
+  width: 36.5rem;
+  height: 32rem;
+}
+.container-faq {
+  height: 5.4rem;
+  padding: 1.7rem 0;
+  border-bottom: 1px solid var(--Light-grayish-blue) ;  
+  cursor: pointer;
+  transition: all .5s;
+  position: relative;  
+}
+.container-faq.active {
+  height: 10.3rem;
+}
+.container-faq p{  
+  width: 100%;
+  margin-top: 1.1rem;
+  line-height: 1.6em;
+  font-size: 1.2em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--Dark-grayish-blue);
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.4s;
+}
+
+.container-faq h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 1.7rem;
+  transition: color 0.25s;
+  z-index: 5; 
+}
+.container-faq h2 > img {
+  transition: transform 0.6s;
+}
+
+.container-faq:hover h2{
+  color: var(--Soft-red);
+}
+.container-faq.active h2 {
+  font-weight: 700;
+  color: var(--Very-dark-desaturated-blue);
+}
+.container-faq.active h2 > img {
+  transform: rotateX(180deg);
+}
+.container-faq.active:hover h2 {
+  font-weight: 700;
+  color: var(--Very-dark-grayish-blue);
+}
+.container-faq h2 img{
+  width: 0.9rem;
+}
+.container-faq.active p{  
+  opacity: 1;
+  position: static;
+}
+
+@media (max-width: 800px){
+  html {
+    font-size: 9px;
+  }
+  .center {
+    margin-top: 8rem;
+    padding: 8rem 3rem;
+    align-items: flex-end;
+  }
+  .container {
+    width: 100%;
+    height: 57rem;
+    flex-direction: column;   
+  }
+  .container-img .group-hidden{    
+    overflow: visible;  
+  }
+ 
+  .img-pattern ,.img-woman{
+    width: 25rem;    
+    top: -11rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .container-img .img-pattern {
+    top: -14rem;
+  }
+  .img-box {
+    width: 8rem;
+    top: -3rem;
+    left: calc(50% - 12rem);  
+    animation: none;
+
+  }
+  .container > .container-img {
+    height: 25%;
+  }
+  .container > .container-faqs {
+    height: 75%;
+  }
+  .container > .container-img, 
+  .container > .container-faqs {
+    width: 100%;  
+  }
+  .container-faqs {
+    text-align: center;    
+  }
+  .group-faqs {
+    width: 32.5rem;
+    height: 27rem;
+    text-align: left;
+    margin: 0 auto;
+  }
+}
