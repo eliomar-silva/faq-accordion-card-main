@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Github Pages](eliomar-silva.github.io/faq-accordion-card-main/)
+- Solution URL: [Github Pages](https://eliomar-silva.github.io/faq-accordion-card-main/)
 
 ## My process
 
